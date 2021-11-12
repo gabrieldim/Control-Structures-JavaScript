@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function palindrom_check(){
+            number = prompt("Enter number: ")
+            if(!isNaN(number)){
+            last = number % 10;
+            first = number / 100;
+
+            if( last == parseInt(first) ){
+                document.write("The entered number is palindrom")
+            }else{
+                document.write("Isn't palindrom")
+            }
+        }else{
+            document.write("This is not number")
+        }
+    }
+
+    function phone_number_check(){
+        phoneNumber = prompt("Enter phone number: ")
+        ph1 = phoneNumber.slice(0,3);
+        ph2 = phoneNumber.slice(3,6);
+        ph3 = phoneNumber.slice(6,9);
+        if(ph1 == "070" || ph1 == "071" || ph1 == "072"){
+            number = ph1+"/"+ph2+"-"+ph3+" - T-mobile";
+        }
+        if(ph1 == "075" || ph1 == "076"){
+            number = ph1+"/"+ph2+"-"+ph3+" - One";
+        }
+        if(ph1 == "077" || ph1 == "078"){
+            number = ph1+"/"+ph2+"-"+ph3+" - Vip";
+        }
+        document.write(number)
+    }
+    
+    function longest_string(){
+        longString = prompt("Enter a string: ")
+        littleStrings = longString.split(" ");
+        let longestIndex=0;
+        let maxLength=-1;
+       for(let i =0; i<littleStrings.length; i++){
+            if(littleStrings[i].length > maxLength){
+                maxLength = littleStrings[i].length;
+                longestIndex = i;
+            }
+        }
+        console.log(littleStrings[longestIndex])
+    }
+
+    function numbers_check(){
+        for(let i=1; i<31 ;i++){
+            if(i%2==0) document.write(i + " is odd number" + "<br>")
+            if(i%2!=0) document.write(i + " is even number" + "<br>") 
+        }
+    }
+    
+    function number_check(){
+        nb1 = prompt("Enter the 1st number: ")
+        nb2 = prompt("Enter the 2nd number: ")
+        nb3 = prompt("Enter the 3rd number: ")
+
+        let final = nb1*nb2*nb3;
+        if(parseInt(final) < 0){
+            document.write("-");
+        }else{
+            document.write("+")
+        }
+    }
+
+
+
+    </script>
+</head>
+<body>
+    <h4>Task 1: Check if the entered number (length 3) is a palindrom:</h4>
+    <button onclick="palindrom_check()">Task 1</button>
+    
+    <br>
+
+    <h4>Phone number check:</h4>
+    <button onclick="phone_number_check()">Task 2</button>
+
+    <br>
+
+    <h4>Longest word in one string:</h4>
+    <button onclick="longest_string()">Task 3</button>
+
+    <br>
+
+    <h4>Positive/Negative number check:</h4>
+    <button onclick="number_check()">Task 4</button>
+
+    <br>
+
+    <h4>Print numbers:</h4>
+    <button onclick="numbers_check()">Task 4</button>
+
+
+</body>
+</html>
